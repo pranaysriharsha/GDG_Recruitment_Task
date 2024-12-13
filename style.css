@@ -1,0 +1,245 @@
+/* Ensure HTML and body take the full viewport height */
+html{
+    padding: 0;
+    height: 100%; /* Allow child elements to use 100% height */
+}
+body{
+    color:white;
+    display: flex;
+    margin: 0px;
+    height: 100%;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+.wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center; /* Align items horizontally in the center */
+    align-items: stretch; /* Stretch items to be the same height */
+}
+
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.countbox h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+  }
+  
+  .countbox p {
+    font-size: 1em;
+    margin: 10px 0;
+  }
+  
+  .countbox button {
+    background: #720e9e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .countbox button:hover {
+    background: #0056b3;
+  }
+  
+  .creative-text {
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+
+/* Style for countbox and portbox */
+.portbox {
+    background-color:#012169; 
+    height: 100%; /* Visible height for each box (50% of the viewport) */
+    width: 40%; /* Full width */
+    margin:5% 2.5% 5% 2.5%;
+    border-radius: 5%;
+    flex:3;
+    padding:10px;
+}
+
+.countbox{
+    background-color:#012169;
+    height: 100%; 
+    width: 40%; 
+    margin:5% 2.5% 5% 2.5%;
+    margin-bottom: 5%;
+    border-radius: 5%;
+    flex:2;
+    text-align: center;
+    padding:10px;
+}
+
+.top {
+    height: 50%; /* Occupy 50% of the parent countbox */
+    display: flex; /* Flexbox for the top section */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    margin-top: 0px; /* Optional: Add small spacing if needed */
+    margin-bottom:0px;
+    padding:0;
+}
+
+#timer {
+    font-size: 100%; /* Set size relative to the height of the .top box */
+    height: 40%; /* Occupy 40% of the height of the .top box */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Remove default margin to prevent unnecessary overflow */
+}
+
+.circular-section{
+    height:250px;
+    width:250px;
+    border-radius: 50%;
+    background-image: url('./public/profile.png');
+    background-size:cover; /* Ensures the whole image fits inside the circle */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat;
+    padding:0;
+    margin:0;
+}
+
+.my-photo{
+    height: 50%; /* Occupy 50% of the parent countbox */
+    display: flex; /* Flexbox for the top section */
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    padding:0;
+    margin:0;
+}
+
+
+.skills{
+    display: flex; /* Flexbox for the top section */
+    flex-direction: column; /* Stack content vertically */
+    justify-content:center; /* Center content vertically */
+    /* Center content horizontally */
+    padding:0;
+    margin:0;
+    align-items: flex-start; /* Align content to the left */
+    text-align: left;
+    padding-left: 50px;
+}
+h1{
+    font-family: "Libre Baskerville", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+p{
+    padding:0px;
+    margin:0px;
+}
+
+/* Container to hold the images */
+.image-frame {
+    width: 100%;  /* You can adjust this value */
+    height: 300px; /* Height of the frame */
+    overflow: hidden;  /* Hide images that are out of view */
+    margin-top: 0px;
+}
+
+/* Style for the slider (all images in one line) */
+.image-slider {
+    display: flex;
+    transition: transform 0.5s ease;  /* Smooth transition */
+}
+
+.image-slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensure the images cover the frame */
+    max-width: 100%;  /* Makes sure the image fits inside the frame */
+    flex-shrink: 0;
+}
+
+
+
+
+/*@media(max-width:600px){
+    body{
+        display:block;
+    }
+    .portbox{
+        background-color:#f5d19a;
+        height: 100%; 
+        width: 100%; 
+        margin:5%;
+        border-radius: 40px;
+    }
+    .countbox{
+        background-color: #f5d19a;
+        height: 100%; 
+        width: 100%; 
+        margin:5%;
+        border-radius: 40px;
+    }
+}*/
+
+p{
+    font-size: 15px;
+}
+
+
+@media(max-width: 600px) {
+    body {
+        display: block;
+        padding: 0;
+    }
+
+    .wrapper {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center;
+        display: block;
+    }
+
+    .portbox, .countbox {
+        height: auto;  /* Set to auto for flexible height based on content */
+        width: 90%;  /* Occupy 90% of the viewport width */
+        margin:5%;  /* Add vertical margin for spacing */
+        border-radius: 20px;  /* Rounded corners */
+    }
+
+    .image-frame {
+        height: 250px; /* Reduce the image height on mobile for better scaling */
+        margin-top: 10px; /* Adjust top margin for mobile */
+    }
+
+    .circular-section {
+        height: 200px; /* Make the circular section smaller on mobile */
+        width: 200px;
+    }
+
+    .skills {
+        padding: 10px;
+    }
+
+    /* Optional: You can further adjust text sizes on smaller screens */
+    .countbox h2, .skills h2 {
+        font-size: 1.2em;  /* Slightly smaller text on mobile */
+    }
+}
+
+
+
